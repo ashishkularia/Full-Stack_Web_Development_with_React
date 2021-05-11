@@ -30,7 +30,7 @@
 					<li class="nav-item"><a class="nav-link" href="/aboutUs.html"><span class="fa fa-info"></span> About Us</a></li>
 					<li class="nav-item"><a class="nav-link" href="#"><span class="fa fa-list"></span> Menu</a></li>
 					<li class="nav-item"><a class="nav-link" href="/contactus.html"><span class="fa fa-address-card"></span> Contact</a></li>
-					<li class="nav-item"><a class="nav-link" href="#loginModal" data-target="#loginModal" data-toggle="modal"><span class="fa fa-user"></span> Login</a></li>
+					<li class="nav-item"><a class="nav-link" href="#loginModal" id="loginStarter"><span class="fa fa-user"></span> Login</a></li>
 				</ul>
 			</div>
 		</div>
@@ -77,11 +77,11 @@
 	<div class="modal fade" id="reservationModal" role="dialog">
 		<div class="modal-dialog modal-lg" role="content">
 			<div class="modal-content">
-				<div class="modal-header bg-warning">
+				<div class="modal-header">
 					<h4 class="modal-title">Reserve a Table</h4>
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
-				<div class="modal-body bg-light">
+				<div class="modal-body">
 						<form>
 							<div class="form-group row">
 								<div class="col-12 col-md-3">
@@ -171,7 +171,7 @@
 					<img src="img/logo.png" class="img-fluid">
 				</div>
 				<div class="col-12 col-sm-3 align-self-center">
-					<a href="#reservation"><button class="btn btn-block btn-warning" href="#reservationModal" data-target="#reservationModal" data-toggle="modal">Reserve Table</button></a>
+					<a href="#reservation" id="reservationStarter"><button class="btn btn-block btn-warning" href="#reservationModal">Reserve Table</button></a>
 				</div>
 			</div>
 		</div>
@@ -424,6 +424,16 @@
 					}
 				});
 			});
+		</script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('#loginStarter').click(function() {
+					$('#loginModal').modal('toggle');
+				});
+				$('#reservationStarter').click(function() {
+					$('#reservationModal').modal('toggle');
+				});
+			})
 		</script>
 <!--		<script type="text/javascript">
 			$(document).ready(function() {
