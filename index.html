@@ -408,48 +408,6 @@
 		<script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
 		<script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
 		<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script type="text/javascript">$().button('toggle')</script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$('#mycarousel').carousel({interval: 2000});
-				$('#carouselButton').click(function() {
-					if($('#carouselButton').children('span').hasClass('fa-pause')) {
-						$('#mycarousel').carousel('pause');
-						$('#carouselButton').children('span').removeClass('fa-pause').addClass('fa-play');
-					}
-					else {
-						// alert('working');
-						$('#mycarousel').carousel('cycle');
-						$('#carouselButton').children('span').removeClass('fa-play').addClass('fa-pause');
-					}
-				});
-			});
-		</script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-				$('#loginStarter').click(function() {
-					$('#loginModal').modal('toggle');
-				});
-				$('#reservationStarter').click(function() {
-					$('#reservationModal').modal('toggle');
-				});
-			})
-		</script>
-<!--		<script type="text/javascript">
-			$(document).ready(function() {
-				$('#mycarousel').carousel({interval: 2000});
-				$('#carousel-pause').click(function() {
-					$('#mycarousel').carousel('pause');
-				});
-				$('#carousel-play').click(function() {
-					$('#mycarousel').carousel('cycle');
-				});
-			});
-		</script>
- 		<script type="text/javascript">
-			$(document).ready(function() {
-				$('[data-toggle="tooltip"]').tooltip();
-			});
-		</script>
- -->	</body>
-	</html>
+		<script type="text/javascript" src="js/scripts.js"></script>
+	</body>
+</html>
