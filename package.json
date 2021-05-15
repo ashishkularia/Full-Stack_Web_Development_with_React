@@ -2,20 +2,27 @@
   "name": "full-stack_web_development_with_react",
   "version": "1.0.0",
   "description": "HKUoST Couseresa Course",
-  "main": "index.html",
+  "main": "./dist/index.html",
   "scripts": {
-    "start": "npm run watch:all",
+    "start": "npm run build:all",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lite": "lite-server",
-    "scss": "node-sass -o css/ css/",
+    "scss": "node-sass -o css/ dist/css/",
     "watch:scss": "onchange \"css/*.scss\" -- npm run scss",
-    "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\""
+    "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\"",
+    "clean": "rimraf dist",
+    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
+    "imagemin": "imagemin img/* -o dist/img",
+    "usemin": "usemin contactus.html -d dist --htmlmin -o dist/contactus.html && usemin aboutus.html -d dist --htmlmin -o dist/aboutus.html && usemin index.html -d dist --htmlmin -o dist/index.html",
+    "build": "npm run clean && npm run copyfonts && npm run imagemin && npm rum usemin",
+    "build:all": "npm run build && npm run watch:all"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ashishkularia/Full-Stack_Web_Development_with_React.git"
   },
   "author": "Ashish Kularia",
+  "email": "ashishkularia@gmail.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ashishkularia/Full-Stack_Web_Development_with_React/issues"
@@ -27,7 +34,8 @@
     "node-sass": "^6.0.0",
     "onchange": "^7.1.0",
     "parallelshell": "^3.0.2",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.16.1",
+    "rimraf": "^3.0.2"
   },
   "dependencies": {
     "bootstrap-social": "^5.1.1",
